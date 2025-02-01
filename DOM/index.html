@@ -73,7 +73,14 @@
         deleteBtn.onclick = () => {
           todosDiv.removeChild(todoNode);
         };
-        
+        editBtn.onclick = () => {
+            const newTodo = prompt("Enter new todo");
+            if (newTodo === null || newTodo === "") {
+                alert("Please enter a todo");
+                return;
+            }
+            todo.innerText = newTodo;
+        }
         todo.innerText = todoText.value;
         deleteBtn.innerText = "Delete";
         editBtn.innerText = "Edit";
